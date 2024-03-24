@@ -71,7 +71,7 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Firstname</th>
+                  <th>Qualifications</th>
                   <th>School/<br>College Name</th>
                   <th>State</th>
                   <th>Passing Year</th>
@@ -82,7 +82,7 @@
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td><input type="text" id=""></td>
+                  <td><p>10th Details</p><input type="text" id="edu1"></td>
                   <td><textarea cols="50" id="edu1-name" ></textarea></td>
                   <td><input type="text" id="edu1-state"></td>
                   <td><input type="text" id="edu1-year"></td>
@@ -90,7 +90,7 @@
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td><input type="text" ></td>
+                    <td><p>PUC/12th Details</p><input type="text" id="edu2" ></td>
                     <td><textarea id="edu2-name" ></textarea></td>
                     <td><input type="text" id="edu2-state" ></td>
                     <td><input type="text" id="edu2-year" ></td>
@@ -98,7 +98,7 @@
                   </tr>
                   <tr>
                     <td>3</td>
-                    <td><input type="text" ></td>
+                    <td><p>Graduation Details</p><input type="text" id="edu3" ></td>
                     <td><textarea id="edu3-name" ></textarea></td>
                     <td><input type="text" id="edu3-state"></td>
                     <td><input type="text" id="edu3-year"></td>
@@ -107,6 +107,7 @@
               </tbody>
             </table>
         </div>
+        
         
           
 
@@ -131,7 +132,42 @@
         window.location.href = 'display.html';
         localStorage.setItem('objective', document.getElementById('objective').value);
         window.location.href = 'display.html';
+        //edu1
+        localStorage.setItem('edu1', document.getElementById('edu1').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu1-name', document.getElementById('edu1-name').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu1-state', document.getElementById('edu1-state').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu1-year', document.getElementById('edu1-year').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu1-cgpa', document.getElementById('edu1-cgpa').value);
+        window.location.href = 'display.html';
+        //edu2
+        localStorage.setItem('edu2', document.getElementsById('edu2').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu2-name', document.getElementById('edu2-name').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu2-state', document.getElementById('edu2-state').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu2-year', document.getElementById('edu2-year').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu2-cgpa', document.getElementById('edu2-cgpa').value);
+        window.location.href = 'display.html';
+        //edu3
+        localStorage.setItem('edu3', document.getElementById('edu3').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu3-name', document.getElementById('edu3-name').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu3-state', document.getElementById('edu3-state').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu3-year', document.getElementById('edu3-year').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('edu3-cgpa', document.getElementById('edu3-cgpa').value);
+        window.location.href = 'display.html';
             
+        
+
     });
     </script>
     

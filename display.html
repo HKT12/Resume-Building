@@ -9,7 +9,7 @@
         hr{
             margin-top: 0px;
         }
-        .col-md-3{
+        .col-md-4{
             background-color: rgb(154, 154, 248);
         }
         .box {
@@ -21,7 +21,7 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <img src="sweet.jpg" class="rounded-circle" width="150px" height="150px">
             <h4>CONTACT</h4>
             <hr>
@@ -34,9 +34,30 @@
             <p id="Dgithub"></p>
             <h4>Education</h4>
             <hr>
+            <ul>
+
+                <b><p id="Dedu1"></p></b>
+                <p id="Dedu1-name" style="display: inline-block;" ></p>
+                <p id="Dedu1-state" style="float:right"  ></p> 
+                <p id="Dedu1-year" ></p>
+                <p id="Dedu1-cgpa" style="display: inline-block;"></p>
+
+                <b><p id="Dedu2"></p></b>
+                <p id="Dedu2-name" style="display: inline-block;" ></p>
+                <p id="Dedu2-state" style="float:right"  ></p> 
+                <p id="Dedu2-year" ></p>
+                <p id="Dedu2-cgpa" style="display: inline-block;"></p>
+
+                <b><p id="Dedu3"></p></b>
+                <p id="Dedu3-name" style="display: inline-block;" ></p>
+                <p id="Dedu3-state" style="float:right"  ></p> 
+                <p id="Dedu3-year" ></p>
+                <p id="Dedu3-cgpa" style="display: inline-block;"></p2>
+            
+            </ul>
             
         </div>
-        <div class="col-md-9">
+        <div class="col-md-8">
             <p id="Dname" class="display-4"></p>
             <div class="box">
             <p id="Dobjective"></p>
@@ -56,6 +77,32 @@
     document.getElementById('Dlinked').innerHTML += localStorage.getItem('linked');
     document.getElementById('Dgithub').innerHTML += localStorage.getItem('github');
     document.getElementById('Dobjective').innerHTML += localStorage.getItem('objective');
+    //edu1
+    document.getElementById('Dedu1').innerHTML += localStorage.getItem('edu1');
+    document.getElementById('Dedu1-name').innerHTML += localStorage.getItem('edu1-name');
+    document.getElementById('Dedu1-state').innerHTML += localStorage.getItem('edu1-state');
+    document.getElementById('Dedu1-year').innerHTML += localStorage.getItem('edu1-year');
+    document.getElementById('Dedu1-cgpa').innerHTML += localStorage.getItem('edu1-cgpa');
+
+    //edu2
+    document.getElementById('Dedu2').innerHTML += localStorage.getItem('edu2');
+    document.getElementById('Dedu2-name').innerHTML += localStorage.getItem('edu2-name');
+    document.getElementById('Dedu2-state').innerHTML += localStorage.getItem('edu2-state');
+    document.getElementById('Dedu2-year').innerHTML += localStorage.getItem('edu2-year');
+    document.getElementById('Dedu2-cgpa').innerHTML += localStorage.getItem('edu2-cgpa');
+
+    //edu3
+    document.getElementById('Dedu3').innerHTML += localStorage.getItem('edu3');
+    document.getElementById('Dedu3-name').innerHTML += localStorage.getItem('edu3-name');
+    document.getElementById('Dedu3-state').innerHTML += localStorage.getItem('edu3-state');
+    document.getElementById('Dedu3-year').innerHTML += localStorage.getItem('edu3-year');
+    document.getElementById('Dedu3-cgpa').innerHTML += localStorage.getItem('edu3-cgpa');
+    
+
+
+    
+
+
     </script>
 </body>
 </html>
