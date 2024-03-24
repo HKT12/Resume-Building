@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Form</title>
+    <style>
+        form {
+            width: 60%;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],[type="email"],[type="tel"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" >
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4"></textarea>
+
+        <label for="linked">Linkedin Url:</label>
+        <input type="text" id="linked" name="linked">
+
+        <label for="github">GitHub Url:</label>
+        <input type="text" id="github" name="github">
+
+        <label for="objective">Carrer Objective:</label>
+        <textarea id="objective" name="objective" rows="4"></textarea>
+
+        <label for="experience">Work Experience:</label>
+        <textarea id="experience" name="experience" rows="4"></textarea>
+
+        <label for="skills">Skills:</label>
+        <textarea id="skills" name="skills" rows="4"></textarea>
+
+        <lable for="image">Upload Image:</lable>
+        <input type="file" class="custom-file-input" id="image" name="image">  
+          
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <script>
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the form from submitting normally
+        localStorage.setItem('name', document.getElementById('name').value);
+        window.location.href = 'display.html'; // Redirect to the second page
+        localStorage.setItem('email', document.getElementById('email').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('phone', document.getElementById('phone').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('address', document.getElementById('address').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('linked', document.getElementById('linked').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('github', document.getElementById('github').value);
+        window.location.href = 'display.html';
+        localStorage.setItem('objective', document.getElementById('objective').value);
+        window.location.href = 'display.html';
+        
+        
+    });
+    </script>
+    
+</body>
+</html>

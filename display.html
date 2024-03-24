@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .col-md-3{
+            background-color: rgb(154, 154, 248);
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <h3>CONTACT</h3>
+            <hr>
+            <p id="Demail"></p>
+            <p id="Dphone"></p>
+            <p id="Daddress"></p>
+            <p id="Dlinked"></p>
+            <p id="Dgithub"></p>
+        </div>
+        <div class="col-md-9">
+            <p id="Dname"></p>
+            <p id="Dobjective"></p>
+            <hr>
+        </div>
+        
+    </div>
+</div>
+    
+    <script>
+    
+    document.getElementById('Dname').innerHTML += localStorage.getItem('name');
+    document.getElementById('Demail').innerHTML += localStorage.getItem('email');
+    document.getElementById('Dphone').innerHTML += localStorage.getItem('phone');
+    document.getElementById('Daddress').innerHTML += localStorage.getItem('address');
+    document.getElementById('Dlinked').innerHTML += localStorage.getItem('linked');
+    document.getElementById('Dgithub').innerHTML += localStorage.getItem('github');
+    document.getElementById('Dobjective').innerHTML += localStorage.getItem('objective');
+    </script>
+</body>
+</html>
