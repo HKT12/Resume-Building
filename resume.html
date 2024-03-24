@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Resume Form</title>
     <style>
         form {
@@ -43,10 +44,10 @@
 
         <label for="phone">Phone:</label>
         <input type="tel" id="phone" name="phone">
-
+        
         <label for="address">Address:</label>
         <textarea id="address" name="address" rows="4"></textarea>
-
+        
         <label for="linked">Linkedin Url:</label>
         <input type="text" id="linked" name="linked">
 
@@ -64,6 +65,49 @@
 
         <lable for="image">Upload Image:</lable>
         <input type="file" class="custom-file-input" id="image" name="image">  
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Firstname</th>
+                  <th>School/<br>College Name</th>
+                  <th>State</th>
+                  <th>Passing Year</th>
+                  <th>CGPA</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><input type="text" id=""></td>
+                  <td><textarea cols="50" id="edu1-name" ></textarea></td>
+                  <td><input type="text" id="edu1-state"></td>
+                  <td><input type="text" id="edu1-year"></td>
+                  <td><input type="text" id="edu1-cgpa"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><input type="text" ></td>
+                    <td><textarea id="edu2-name" ></textarea></td>
+                    <td><input type="text" id="edu2-state" ></td>
+                    <td><input type="text" id="edu2-year" ></td>
+                    <td><input type="text" id="edu2-cgpa" ></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><input type="text" ></td>
+                    <td><textarea id="edu3-name" ></textarea></td>
+                    <td><input type="text" id="edu3-state"></td>
+                    <td><input type="text" id="edu3-year"></td>
+                    <td><input type="text" id="edu3-cgpa"></td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+        
           
 
         <button type="submit">Submit</button>
@@ -87,8 +131,7 @@
         window.location.href = 'display.html';
         localStorage.setItem('objective', document.getElementById('objective').value);
         window.location.href = 'display.html';
-        
-        
+            
     });
     </script>
     
