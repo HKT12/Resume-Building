@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            float: right;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Build Your Resume</h2>
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" >
+    
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+            
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4"></textarea>
+            
+            <label for="linked">Linkedin Url:</label>
+            <input type="text" id="linked" name="linked">
+    
+            <label for="github">GitHub Url:</label>
+            <input type="text" id="github" name="github">
+    
+            <label >Known Languages:</label>
+            
+    
+    
+            <label for="objective">Carrer Objective:</label>
+            <textarea id="objective" name="objective" rows="4"></textarea>
+    
+            <label for="experience">Work Experience:</label>
+            <textarea id="experience" name="experience" rows="4"></textarea>
+    
+            <label for="skills">Skills:</label>
+            <textarea id="skills" name="skills" rows="4"></textarea>
+    
+            
+    
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Qualifications</th>
+                      <th>School/<br>College Name</th>
+                      <th>State</th>
+                      <th>Passing Year</th>
+                      <th>CGPA</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td><p>10th Details</p><input type="text" id="edu1"></td>
+                      <td><textarea cols="50" id="edu1-name" ></textarea></td>
+                      <td><input type="text" id="edu1-state"></td>
+                      <td><input type="text" id="edu1-year"></td>
+                      <td><input type="text" id="edu1-cgpa"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><p>PUC/12th Details</p><input type="text" id="edu2" ></td>
+                        <td><textarea cols="50" id="edu2-name" ></textarea></td>
+                        <td><input type="text" id="edu2-state" ></td>
+                        <td><input type="text" id="edu2-year" ></td>
+                        <td><input type="text" id="edu2-cgpa" ></td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td><p>Graduation Details</p><input type="text" id="edu3" ></td>
+                        <td><textarea cols="50" id="edu3-name" ></textarea></td>
+                        <td><input type="text" id="edu3-state"></td>
+                        <td><input type="text" id="edu3-year"></td>
+                        <td><input type="text" id="edu3-cgpa"></td>
+                      </tr>
+                  </tbody>
+                </table>
+            </div>
+            
+            
+            
+            <label for="exampleFormControlFile1">Upload File:</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      
+    
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and resume generation
+        document.getElementById('resumeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Construct resume template
+            let resumeTemplate = `
+                <h2>${formData.get('name')}</h2>
+                <h3>Email:</h3> <p>${formData.get('email')}</p>
+                <p>Phone: ${formData.get('phone')}</p>
+                <h3>Education</h3>
+                <p>${formData.get('education')}</p>
+                <h3>Work Experience</h3>
+                <p>${formData.get('workExperience')}</p>
+                <h3>Skills</h3>
+                <p>${formData.get('skills')}</p>
+                <h3>Additional Information</h3>
+                <p>${formData.get('additionalInfo')}</p>
+                <h3>Education</h3>
+                <p>${formData.get('edu1')}</p>
+                <p>${formData.get('edu1-name')}</p>
+                <p>${formData.get('edu1-year')}</p>
+                <p>${formData.get('edu1-state')}</p>
+                <p>${formData.get('edu1-cgpa')}</p>
+                
+            `;
+            
+            // Print or display resume
+            document.body.innerHTML = resumeTemplate;
+
+            // Optional: You can style the resume template here
+            document.body.style.fontFamily = 'Arial, sans-serif';
+            document.body.style.margin = '20px';
+            document.body.style.padding = '20px';
+            document.body.style.background = '#fff';
+        });
+    </script>
+</body>
+</html>
