@@ -19,7 +19,7 @@
             padding: 20px;
             background-color: #fff;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(157, 100, 255, 0.9);
         }
         h2 {
             text-align: center;
@@ -32,7 +32,7 @@
         }
         input[type="text"],
         input[type="email"],
-        input[type="number"],
+        input[type="tel"],
         textarea {
             width: 100%;
             padding: 10px;
@@ -53,9 +53,25 @@
             cursor: pointer;
             font-size: 16px;
             float: right;
+            align-content: center;
         }
         input[type="submit"]:hover {
             background-color: #45a049;
+        }
+        /*display styling*/
+
+        hr{
+            margin-top: 0px;
+        }
+        .col-md-4{
+            background-color: rgb(154, 154, 248);
+            color:white;
+        }
+        .box {
+            overflow-wrap:break-word;
+        }
+        img{
+            margin-right:10px;
         }
     </style>
 </head>
@@ -64,7 +80,7 @@
         <h2>Build Your Resume</h2>
         <form id="myForm" method="get">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" >
     
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" >
@@ -82,7 +98,7 @@
             <input type="text" id="github" name="github">
     
             <label >Known Languages:</label>
-            
+            <textarea id="languages" name="languages" rows="4"></textarea>
     
     
             <label for="objective">Carrer Objective:</label>
@@ -110,7 +126,7 @@
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td><p>10th Details</p><input type="text" id="edu1" name="edu123"></td>
+                      <td><p>10th Details</p><input type="text" id="edu1" name="edu1"></td>
                       <td><textarea cols="50" id="edu1-name"  name="edu1-name"></textarea></td>
                       <td><input type="text" id="edu1-state" name="edu1-state"></td>
                       <td><input type="text" id="edu1-year" name="edu1-year"></td>
@@ -157,28 +173,7 @@
             
             // Construct resume template
             let resumeTemplate = `
-                <h2>${formData.get('name')}</h2>
-                <h3>Email:</h3> <p>${formData.get('email')}</p>
-                <p>Phone: ${formData.get('phone')}</p>
-                <h3>Address</h3>
-                <p>${formData.get('address')}</p>
-                <h3>Linkedin</h3>
-                <p>${formData.get('linked')}</p>
-                <h3>github</h3>
-                <p>${formData.get('github')}</p>
-                
-                <h3>Education</h3>
-                <p>${formData.get('edu1')}</p>
-                <p>${formData.get('edu1-name')}</p>
-                <p>${formData.get('edu1-year')}</p>
-                <p>${formData.get('edu1-state')}</p>
-                <p>${formData.get('edu1-cgpa')}</p>
-                
-                
-
-
-
-
+                            
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-4">
@@ -200,40 +195,38 @@
                             <br>
                             <h4 style="padding-right:400px; padding-top:10px;" >Education</h4>
                             <hr>
+                            <div>
                             <ul>
-                                <b><p id="Dedu1"></p></b>
-                                <p id="Dedu1-name" style="display: inline-block;" ></p>
-                                <p id="Dedu1-state" style="float:right"  ></p> 
-                                <p id="Dedu1-year" ></p>
-                                <p id="Dedu1-cgpa" style="display: inline-block;"></p>
+                                <p>${formData.get('edu1')}</p>
+                                <p style="display: inline-block;" >${formData.get('edu1-name')}</p>
+                                <p style="float:right"  >${formData.get('edu1-state')}</p> 
+                                <p >${formData.get('edu1-year')}</p>
+                                <p style="display: inline-block;">${formData.get('edu1-cgpa')}</p>
 
-                                <b><p id="Dedu2"></p></b>
-                                <p id="Dedu2-name" style="display: inline-block;" ></p>
-                                <p id="Dedu2-state" style="float:right"  ></p> 
-                                <p id="Dedu2-year" ></p>
-                                <p id="Dedu2-cgpa" style="display: inline-block;"></p>
+                                <b><p>${formData.get('edu2')}</p></b>
+                                <p style="display: inline-block;" >${formData.get('edu2-name')}</p>
+                                <p style="float:right"  >${formData.get('edu2-state')}</p> 
+                                <p >${formData.get('edu2-year')}</p>
+                                <p style="display: inline-block;">${formData.get('edu2-cgpa')}</p>
 
-                                <b><p id="Dedu3"></p></b>
-                                <p id="Dedu3-name" style="display: inline-block;" ></p>
-                                <p id="Dedu3-state" style="float:right"  ></p> 
-                                <p id="Dedu3-year" ></p>
-                                <p id="Dedu3-cgpa" style="display: inline-block;"></p2>
+                                <b><p>${formData.get('edu3')}</p></b>
+                                <p style="display: inline-block;" >${formData.get('edu3-name')}</p>
+                                <p style="float:right"  >${formData.get('edu3-state')}</p> 
+                                <p >${formData.get('edu3-year')}</p>
+                                <p style="display: inline-block;">${formData.get('edu3-cgpa')}</p2
                             </ul>
-
+                            </div>
+                            <div>
                             <h4 style="padding-right:400px; padding-top:10px;">Languages</h4>
                             <hr>    
-                            <ul>
-                                <p></p>
-                                <p></p>
-                                <p></p>
-                                <p></p>
-                            </ul>        
+                                
+                            </div>
             
-        </div>
+                </div>
         <div class="col-md-8">
             <p class="display-4">${formData.get('name')}</p>
             <div class="box">
-            <p id="Dobjective"></p>
+            <p>${formData.get('objective')}</p>
             </div>
             <hr>
         </div>   
