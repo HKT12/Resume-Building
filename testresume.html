@@ -100,12 +100,15 @@
     
     
             <label for="objective">Carrer Objective:</label>
-            <textarea id="objective" name="objective" rows="4"></textarea>
+            <textarea id="objective" name="objective" rows="4" placeholder="Write 5 to 6 lines..."></textarea>
      
     
             <label for="skills">Skills:</label>
             <textarea id="skills" name="skills" rows="4"></textarea>
     
+            <label for="achivements">Achivements</label>
+            <textarea id="achivements" name="achivements" rows="4" ></textarea>
+     
             
     
             <div class="table-responsive">
@@ -224,6 +227,11 @@
             <p>${formData.get('objective')}</p>
             </div>
             <hr>
+            <h4>Achivements</h4>
+            <hr>
+            <div class="box"> 
+            <p>${formData.get('achivements')}</p>
+            </div>
         </div>   
     </div>
 </div>    
