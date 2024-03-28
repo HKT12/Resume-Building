@@ -74,6 +74,7 @@
         img{
             margin-right:10px;
         }
+        
     </style>
 </head>
 <body>
@@ -81,7 +82,7 @@
         <h2>Build Your Resume</h2>
         <form id="myForm" method="get">
             <label for="name">Name:</label>
-            <input type="text" id="name" pattern="^[A-Z][a-z]*(\s[A-Z][a-z]*)*$" title="letters only" name="name" >
+            <input type="text" id="name" pattern="^[A-Za-z\s]+$"  title="letters only" name="name" >
     
             <label for="email">Email:</label>
             <input type="email" id="email" pattern = "[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Enter Valid Email" name="email" >
@@ -157,12 +158,17 @@
             <input type="file" id="image" name="image" accept="image/*">
             
            
-            <input type="submit" value="Generate Resume">
+            <input type="submit" onclick="upper()" value="Generate Resume">
 
         </form>
     </div>
 
     <script>
+
+        function upper(){
+            const x=document.getElementById('name');
+            x.value = x.value.toUpperCase();
+        }
 
         // JavaScript to handle form submission and resume generation
         document.getElementById('myForm').addEventListener('submit', function(event) {
